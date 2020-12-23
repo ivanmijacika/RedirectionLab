@@ -12,6 +12,7 @@ public class MakeStars{
           }
           System.out.print(" ");
         }
+        System.out.println();
       }
   }
 }
