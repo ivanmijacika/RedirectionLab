@@ -21,7 +21,9 @@ public class PigLatin{
 
   public static String pigLatinBest(String s){
     s = s.toLowerCase();
-    return s;
+    if (!Character.isLetter(s.charAt(0))) return s;
+    if (Character.isLetter(s.charAt(s.length()-1)) || Character.isDigit(s.charAt(s.length()-1))) return pigLatin(s);
+    else return (pigLatin(s.substring(0,s.length()-1)) + s.charAt(s.length()-1));
   }
 
 }
