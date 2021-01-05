@@ -9,7 +9,16 @@ public class PigLatin{
     else return (s.charAt(0) + "ay");
   }
 
-
+  public static String pigLatin(String s){
+    //list of all digraphs
+    ArrayList<String> digraphs = new ArrayList<String>(Arrays.asList("bl", "br", "ch", "ck", "cl", "cr", "dr", "fl", "fr", "gh", "gl", "gr", "ng", "ph", "pl", "pr", "qu", "sc", "sh", "sk", "sl", "sm", "sn", "sp", "st", "sw", "th", "tr", "tw", "wh", "wr"));
+    s = s.toLowerCase();
+    if (s.length() > 1 && digraphs.contains(s.substring(0,2))){
+      if (s.length() == 2) return (s + "ay");
+      else return (s.substring(2) + s.substring(0, 2) + "ay");
+    }
+    else return(pigLatinSimple(s));
+  }
 
 
 }
