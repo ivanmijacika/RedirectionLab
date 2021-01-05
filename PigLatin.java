@@ -26,4 +26,17 @@ public class PigLatin{
     else return (pigLatin(s.substring(0,s.length()-1)) + s.charAt(s.length()-1));
   }
 
+  public static void main( String[]args ){
+    Scanner n = new Scanner( System.in );
+    while (n.hasNextLine()){
+      String s = n.nextLine();
+      Scanner n1 = new Scanner(s);
+      while (n1.hasNext()){
+        String s1 = n1.next();
+        System.out.print(pigLatinBest(s1));
+        System.out.print(" ");
+      }
+      System.out.println();
+    }
+  }
 }
